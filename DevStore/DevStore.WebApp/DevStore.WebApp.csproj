@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DevStore.Common\DevStore.Common.csproj" />
+    <ProjectReference Include="..\DevStore.Data.Domain\DevStore.Data.Domain.csproj" />
+    <ProjectReference Include="..\DevStore.Data.Mapping\DevStore.Data.Mapping.csproj" />
+    <ProjectReference Include="..\DevStore.Repository.Concrete\DevStore.Repository.Concrete.csproj" />
+    <ProjectReference Include="..\DevStore.Repository.Interface\DevStore.Repository.Interface.csproj" />
+    <ProjectReference Include="..\DevStore.Service\DevStore.Service.csproj" />
+    <ProjectReference Include="..\DevStore.Validation\DevStore.Validation.csproj" />
+    <ProjectReference Include="..\DevStore.ViewModel\DevStore.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>
