@@ -1,8 +1,7 @@
+using DevStore.WebApp.Configuration;
+
 // O builder é responsável por fornecer os métodos de controle
 // dos serviços e demais funcionalidades na configuração da App
-using DevStore.Repository.Concrete;
-using DevStore.Repository.Interface;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Daqui para baixo é conteúdo que vinha dentro do método ConfigureServices() na antiga Startup.cs
@@ -13,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Adicionando injeção de dependência
-builder.Services.AddScoped<ICategoriaProdutoRepository, CategoriaProdutoRepository>();
+builder.Services.AddRepositories();
 
 // Essa linha precisa sempre ficar por último na configuração dos serviços
 var app = builder.Build();
