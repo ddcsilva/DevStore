@@ -1,4 +1,7 @@
+using DevStore.Data.Mapping;
+using DevStore.Repository.Concrete;
 using DevStore.WebApp.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 // O builder é responsável por fornecer os métodos de controle
 // dos serviços e demais funcionalidades na configuração da App
@@ -13,6 +16,9 @@ builder.Services.AddControllersWithViews();
 
 // Adicionando injeção de dependência
 builder.Services.AddRepositories();
+
+// Contexto principal do Entity Framework
+builder.Services.AddDatabase(builder.Configuration);
 
 // Essa linha precisa sempre ficar por último na configuração dos serviços
 var app = builder.Build();
