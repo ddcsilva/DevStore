@@ -1,7 +1,7 @@
 ﻿using DevStore.Data.Domain.Entity;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DevStore.Data.Mapping.Mapping
+namespace DevStore.Data.Mapping
 {
     public class CategoriaProdutoMap : BaseEntityMap<CategoriaProduto>
     {
