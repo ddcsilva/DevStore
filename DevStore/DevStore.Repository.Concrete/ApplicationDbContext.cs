@@ -1,4 +1,5 @@
-﻿using DevStore.Data.Mapping;
+﻿using DevStore.Data.Domain.Entity;
+using DevStore.Data.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevStore.Repository.Concrete
@@ -9,6 +10,7 @@ namespace DevStore.Repository.Concrete
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
             // Carrega todas as definições que estão no assembly da classe especificada
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(BaseEntityMap).Assembly);
         }
@@ -22,5 +24,9 @@ namespace DevStore.Repository.Concrete
         {
             ChangeTracker.AutoDetectChangesEnabled = false;
         }
+
+        public DbSet<Loja> Lojas { get; set; }
+        public DbSet<CategoriaProduto> Categorias { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
     }
 }
