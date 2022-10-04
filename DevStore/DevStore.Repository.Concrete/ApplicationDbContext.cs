@@ -12,7 +12,7 @@ namespace DevStore.Repository.Concrete
             base.OnModelCreating(modelBuilder);
 
             // Carrega todas as definições que estão no assembly da classe especificada
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(BaseEntityMap).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(BaseEntityMap<>).Assembly);
         }
 
         public ApplicationDbContext()

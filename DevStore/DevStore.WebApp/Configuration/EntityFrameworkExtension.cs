@@ -11,7 +11,7 @@ namespace DevStore.WebApp.Configuration
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 var connectionString = configuration.GetConnectionString("Principal");
-                options.UseSqlServer(connectionString, option => option.MigrationsAssembly(typeof(BaseEntityMap).Assembly.FullName));
+                options.UseSqlServer(connectionString, option => option.MigrationsAssembly(typeof(BaseEntityMap<>).Assembly.FullName));
             });
         }
     }
