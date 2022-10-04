@@ -7,5 +7,8 @@
 
         public virtual CategoriaProduto Categoria { get; set; }
         public int IdCategoria { get; set; }
+
+        public virtual Loja Loja { get; set; }
+        public int IdLoja { get; set; }
     }
 }

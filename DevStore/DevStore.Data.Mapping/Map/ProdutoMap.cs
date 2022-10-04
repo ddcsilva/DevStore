@@ -13,6 +13,9 @@ namespace DevStore.Data.Mapping
 
             builder.Property(p => p.IdCategoria).IsRequired();
             builder.HasOne(p => p.Categoria).WithMany().HasForeignKey(c => c.IdCategoria);
+
+            builder.Property(p => p.IdLoja).IsRequired();
+            builder.HasOne(p => p.Loja).WithMany().HasForeignKey(l => l.IdLoja);
         }
     }
 }
