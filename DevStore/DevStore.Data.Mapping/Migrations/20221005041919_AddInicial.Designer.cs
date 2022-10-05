@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DevStore.Data.Mapping.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221005023900_AddInicial")]
+    [Migration("20221005041919_AddInicial")]
     partial class AddInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,76 +28,93 @@ namespace DevStore.Data.Mapping.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("nome");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_categoria_produto");
 
-                    b.ToTable("Categorias");
+                    b.ToTable("categoria_produto");
                 });
 
             modelBuilder.Entity("DevStore.Data.Domain.Loja", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("nome");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_loja");
 
-                    b.ToTable("Lojas");
+                    b.ToTable("loja");
                 });
 
             modelBuilder.Entity("DevStore.Data.Domain.Produto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_at");
 
                     b.Property<int>("IdCategoria")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id_categoria");
 
                     b.Property<int>("IdLoja")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id_loja");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("nome");
 
                     b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("preco");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_produto");
 
-                    b.HasIndex("IdCategoria");
+                    b.HasIndex("IdCategoria")
+                        .HasDatabaseName("idx_produto_id_categoria");
 
-                    b.HasIndex("IdLoja");
+                    b.HasIndex("IdLoja")
+                        .HasDatabaseName("idx_produto_id_loja");
 
-                    b.ToTable("Produtos");
+                    b.ToTable("produto");
                 });
 
             modelBuilder.Entity("DevStore.Data.Domain.Produto", b =>
@@ -106,13 +123,15 @@ namespace DevStore.Data.Mapping.Migrations
                         .WithMany()
                         .HasForeignKey("IdCategoria")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_produto_id_categoria");
 
                     b.HasOne("DevStore.Data.Domain.Loja", "Loja")
                         .WithMany()
                         .HasForeignKey("IdLoja")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .IsRequired()
+                        .HasConstraintName("fk_produto_id_loja");
 
                     b.Navigation("Categoria");
 
