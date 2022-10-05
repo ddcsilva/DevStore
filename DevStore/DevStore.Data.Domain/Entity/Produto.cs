@@ -1,4 +1,4 @@
-﻿namespace DevStore.Data.Domain.Entity
+﻿namespace DevStore.Data.Domain
 {
     public class Produto : BaseEntity
     {

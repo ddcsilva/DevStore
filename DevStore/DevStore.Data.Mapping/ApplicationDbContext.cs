@@ -1,8 +1,7 @@
-﻿using DevStore.Data.Domain.Entity;
-using DevStore.Data.Mapping;
+﻿using DevStore.Data.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace DevStore.Repository.Concrete
+namespace DevStore.Data.Mapping
 {
     // Classe para acesso ao Banco de Dados
     public class ApplicationDbContext : DbContext

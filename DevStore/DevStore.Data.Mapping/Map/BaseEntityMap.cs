@@ -1,4 +1,4 @@
-﻿using DevStore.Data.Domain.Entity;
+﻿using DevStore.Data.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

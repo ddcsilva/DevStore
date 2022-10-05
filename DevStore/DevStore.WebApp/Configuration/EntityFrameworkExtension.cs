@@ -1,5 +1,5 @@
-﻿using DevStore.Data.Mapping;
-using DevStore.Repository.Concrete;
+﻿using DevStore.Common;
+using DevStore.Data.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevStore.WebApp.Configuration
@@ -10,7 +10,7 @@ namespace DevStore.WebApp.Configuration
         {
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                var connectionString = configuration.GetConnectionString("Principal");
+                var connectionString = configuration.GetConnectionString(AppConfiguration.ConnectionStringTag);
                 options.UseSqlServer(connectionString, option => option.MigrationsAssembly(typeof(BaseEntityMap<>).Assembly.FullName));
             });
         }
