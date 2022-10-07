@@ -1,7 +1,9 @@
 using DevStore.Data.Mapping;
 using DevStore.Repository.Concrete;
 using DevStore.WebApp.Configuration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 // O builder é responsável por fornecer os métodos de controle
 // dos serviços e demais funcionalidades na configuração da App
@@ -20,6 +22,9 @@ builder.Services.AddRepositories();
 // Contexto principal do Entity Framework
 builder.Services.AddDatabase(builder.Configuration);
 
+// Injetar o Identity
+builder.Services.AddIdentity();
+
 // Essa linha precisa sempre ficar por último na configuração dos serviços
 var app = builder.Build();
 
@@ -36,6 +41,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 // Note a ligeira mudança na declaração da rota padrão
