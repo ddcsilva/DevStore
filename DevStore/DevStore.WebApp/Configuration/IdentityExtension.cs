@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using DevStore.Data.Mapping;
+using Microsoft.AspNetCore.Identity;
 
 namespace DevStore.WebApp.Configuration
 {
@@ -30,6 +31,8 @@ namespace DevStore.WebApp.Configuration
         public static void AddIdentity(this IServiceCollection services)
         {
             services.AddIdentity<IdentityUser<int>, IdentityRole<int>>(SetupIdentityOptions)
+                .AddEntityFrameworkStores<ApplicationIdentityDbContext>()
+                .AddErrorDescriber<ApplicationIdentityErrorDescriber>()
                 .AddDefaultTokenProviders();
 
             services.ConfigureApplicationCookie(options =>

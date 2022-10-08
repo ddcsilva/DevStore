@@ -8,10 +8,18 @@ namespace DevStore.WebApp.Configuration
     {
         public static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
         {
+            var connectionString = configuration.GetConnectionString(AppConfiguration.ConnectionStringTag);
+
+            // Contexto principal do Entity Framework
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                var connectionString = configuration.GetConnectionString(AppConfiguration.ConnectionStringTag);
                 options.UseSqlServer(connectionString, option => option.MigrationsAssembly(typeof(BaseEntityMap<>).Assembly.FullName));
+            });
+
+            // Contexto Identity do entity framework
+            services.AddDbContext<ApplicationIdentityDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString, assembly => assembly.MigrationsAssembly(typeof(ApplicationIdentityDbContext).Assembly.FullName));
             });
         }
     }
