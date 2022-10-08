@@ -11,6 +11,11 @@ namespace DevStore.Data.Mapping
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Carrega todas as definições que estão no assembly da classe especificada
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(IdentityUser<>).Assembly);
+
+            modelBuilder.AddSnakeCase(true);
         }
 
         public ApplicationIdentityDbContext()
@@ -18,7 +23,7 @@ namespace DevStore.Data.Mapping
             ChangeTracker.AutoDetectChangesEnabled = false;
         }
 
-        public ApplicationIdentityDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        public ApplicationIdentityDbContext(DbContextOptions<ApplicationIdentityDbContext> options) : base(options)
         {
             ChangeTracker.AutoDetectChangesEnabled = false;
         }

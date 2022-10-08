@@ -14,41 +14,7 @@ namespace DevStore.Data.Mapping
             // Carrega todas as definições que estão no assembly da classe especificada
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(BaseEntityMap<>).Assembly);
 
-            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
-            {
-                // Padrão de nomenclatura "Table Name"
-                var tableName = entityType.DisplayName().ToSnakeCase();
-                entityType.SetTableName(tableName);
-
-                // Padrão de nomenclatura de "Primary Key"
-                var pk = entityType.FindPrimaryKey();
-                if (pk != null)
-                {
-                    var pkName = $"pk_{tableName}";
-                    pk.SetName(pkName);
-                }
-
-                foreach (var property in entityType.GetProperties())
-                {
-                    // Padrão de nomenclatura de "Columns"
-                    var columnName = property.Name.ToSnakeCase();
-                    property.SetColumnName(columnName);
-
-                    // Padrão de nomenclatura de "Foreign Keys"
-                    foreach (var fk in entityType.FindForeignKeys(property))
-                    {
-                        var fkName = $"fk_{tableName}_{columnName}";
-                        fk.SetConstraintName(fkName);
-                    }
-                }
-
-                // Padrão de nomenclatura de "Indices"
-                foreach (var index in entityType.GetIndexes())
-                {
-                    var indexName = $"idx_{index.GetDatabaseName().Remove(0, 3)}";
-                    index.SetDatabaseName(indexName);
-                }
-            }
+            modelBuilder.AddSnakeCase(false);
         }
 
         public ApplicationDbContext()
