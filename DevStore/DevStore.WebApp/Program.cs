@@ -1,9 +1,4 @@
-using DevStore.Data.Mapping;
-using DevStore.Repository.Concrete;
 using DevStore.WebApp.Configuration;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 // O builder é responsável por fornecer os métodos de controle
 // dos serviços e demais funcionalidades na configuração da App
