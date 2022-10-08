@@ -42,12 +42,25 @@
                                 <!-- / cellphone -->
                             </div>
                             <!-- / header top left -->
-                            <div class="aa-header-top-right">
-                                <ul class="aa-head-top-nav-right">
-                                    <li><a href="account.html">Minha Conta</a></li>
-                                    <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                                </ul>
-                            </div>
+                            <!-- / header top left -->
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <form asp-action="Logout" asp-controller="Account" method="post" id="logoutForm" class="aa-header-top-right">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="javascript:void()">@User.Identity.Name</a></li>
+                                        <li><a href="javascript:void()">Minha Conta</a></li>
+                                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+                                    </ul>
+                                </form>
+                            }
+                            else
+                            {
+                                <div class="aa-header-top-right">
+                                    <ul class="aa-head-top-nav-right">
+                                        <li><a asp-action="Login" asp-controller="Account">Login</a></li>
+                                    </ul>
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -65,7 +78,7 @@
                                 <!-- Text based logo -->
                                 <a asp-action="Index" asp-controller="Home">
                                     <span class="fa fa-shopping-cart"></span>
-                                    <p>DevJedi<strong>Shop</strong> <span>Seu parceiro tecnológico</span></p>
+                                    <p>Dev<strong>Store</strong> <span>Seu parceiro tecnológico</span></p>
                                 </a>
                                 <!-- img based logo -->
                             </div>
@@ -181,7 +194,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="aa-footer-bottom-area">
-                            <p>Criado por <a href="https://www.devjedi.io/">DevJedi.io</a></p>
+                            <p>Criado por Danilo</p>
                             <div class="aa-footer-payment">
                                 <span class="fa fa-cc-mastercard"></span>
                                 <span class="fa fa-cc-visa"></span>
