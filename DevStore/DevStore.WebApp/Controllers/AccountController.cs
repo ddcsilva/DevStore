@@ -1,4 +1,5 @@
 ﻿using DevStore.ViewModel;
+using DevStore.WebApp.ViewModelMap;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,12 +43,7 @@ namespace DevStore.WebApp.Controllers
 
             if (ModelState.IsValid)
             {
-                // TODO: incluir no BD o campo NOME dos usuários ao registrá-lo
-                var usuario = new IdentityUser<int>
-                {
-                    UserName = model.Email,
-                    Email = model.Email
-                };
+                var usuario = model.ToDomain();
 
                 var result = await _userManager.CreateAsync(usuario, model.Senha);
 
