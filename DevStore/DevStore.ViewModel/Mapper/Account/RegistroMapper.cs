@@ -1,9 +1,8 @@
-﻿using DevStore.ViewModel;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 
-namespace DevStore.WebApp.ViewModelMap
+namespace DevStore.ViewModel
 {
-    public static class ViewModelMapRegistroExtension
+    public static class RegistroMapper
     {
         public static IdentityUser<int> ToDomain(this RegistroViewModel from)
         {

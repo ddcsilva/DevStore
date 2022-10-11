@@ -1,4 +1,6 @@
+using DevStore.ViewModel;
 using DevStore.WebApp.Configuration;
+using FluentValidation.AspNetCore;
 
 // O builder é responsável por fornecer os métodos de controle
 // dos serviços e demais funcionalidades na configuração da App
@@ -9,7 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Essa é a nova forma de adicionar o MVC ao projeto
 // Não se usa mais services.AddMvc();
-builder.Services.AddControllersWithViews();
+// Configurando o FluentValidation
+builder.Services.AddControllersWithViews()
+    .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<RegistroValidator>());
 
 // Adicionando injeção de dependência
 builder.Services.AddRepositories();

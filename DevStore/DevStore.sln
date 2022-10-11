@@ -5,23 +5,21 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0E47785C-EA30-4D52-AEC3-5EC4782218E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.Common", "DevStore.Common\DevStore.Common.csproj", "{2EF32D4F-82C8-4679-9526-D74481B9276E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevStore.Common", "DevStore.Common\DevStore.Common.csproj", "{2EF32D4F-82C8-4679-9526-D74481B9276E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.Data.Domain", "DevStore.Data.Domain\DevStore.Data.Domain.csproj", "{FAD1A669-BE0A-4CB4-A620-D9BF6B8C58C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevStore.Data.Domain", "DevStore.Data.Domain\DevStore.Data.Domain.csproj", "{FAD1A669-BE0A-4CB4-A620-D9BF6B8C58C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.Data.Mapping", "DevStore.Data.Mapping\DevStore.Data.Mapping.csproj", "{FBAAB882-8EF4-4001-B336-0495122F3A72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevStore.Data.Mapping", "DevStore.Data.Mapping\DevStore.Data.Mapping.csproj", "{FBAAB882-8EF4-4001-B336-0495122F3A72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.Repository.Concrete", "DevStore.Repository.Concrete\DevStore.Repository.Concrete.csproj", "{39368A3A-097F-40A1-BAC9-6E6EA50B46F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevStore.Repository.Concrete", "DevStore.Repository.Concrete\DevStore.Repository.Concrete.csproj", "{39368A3A-097F-40A1-BAC9-6E6EA50B46F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.Repository.Interface", "DevStore.Repository.Interface\DevStore.Repository.Interface.csproj", "{A114D952-D5D5-41C2-9F4E-8A5C87388633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevStore.Repository.Interface", "DevStore.Repository.Interface\DevStore.Repository.Interface.csproj", "{A114D952-D5D5-41C2-9F4E-8A5C87388633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.Service", "DevStore.Service\DevStore.Service.csproj", "{0265CD3F-DBA7-4786-96D9-CFCA7DB98008}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevStore.Service", "DevStore.Service\DevStore.Service.csproj", "{0265CD3F-DBA7-4786-96D9-CFCA7DB98008}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.ViewModel", "DevStore.ViewModel\DevStore.ViewModel.csproj", "{F8B25981-7B6A-4202-8FA2-7038814183A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevStore.ViewModel", "DevStore.ViewModel\DevStore.ViewModel.csproj", "{F8B25981-7B6A-4202-8FA2-7038814183A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.Validation", "DevStore.Validation\DevStore.Validation.csproj", "{2D376A2B-B573-4918-84B6-823B3D44C042}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevStore.WebApp", "DevStore.WebApp\DevStore.WebApp.csproj", "{E13621A5-028B-4233-B01B-A3B9D7FEE65F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DevStore.WebApp", "DevStore.WebApp\DevStore.WebApp.csproj", "{E13621A5-028B-4233-B01B-A3B9D7FEE65F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +55,6 @@ Global
 		{F8B25981-7B6A-4202-8FA2-7038814183A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8B25981-7B6A-4202-8FA2-7038814183A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8B25981-7B6A-4202-8FA2-7038814183A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D376A2B-B573-4918-84B6-823B3D44C042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D376A2B-B573-4918-84B6-823B3D44C042}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D376A2B-B573-4918-84B6-823B3D44C042}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D376A2B-B573-4918-84B6-823B3D44C042}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E13621A5-028B-4233-B01B-A3B9D7FEE65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E13621A5-028B-4233-B01B-A3B9D7FEE65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E13621A5-028B-4233-B01B-A3B9D7FEE65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,7 +71,6 @@ Global
 		{A114D952-D5D5-41C2-9F4E-8A5C87388633} = {0E47785C-EA30-4D52-AEC3-5EC4782218E2}
 		{0265CD3F-DBA7-4786-96D9-CFCA7DB98008} = {0E47785C-EA30-4D52-AEC3-5EC4782218E2}
 		{F8B25981-7B6A-4202-8FA2-7038814183A6} = {0E47785C-EA30-4D52-AEC3-5EC4782218E2}
-		{2D376A2B-B573-4918-84B6-823B3D44C042} = {0E47785C-EA30-4D52-AEC3-5EC4782218E2}
 		{E13621A5-028B-4233-B01B-A3B9D7FEE65F} = {0E47785C-EA30-4D52-AEC3-5EC4782218E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

@@ -1,5 +1,4 @@
 ﻿using DevStore.ViewModel;
-using DevStore.WebApp.ViewModelMap;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
