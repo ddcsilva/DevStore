@@ -11,9 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Essa é a nova forma de adicionar o MVC ao projeto
 // Não se usa mais services.AddMvc();
-// Configurando o FluentValidation
-builder.Services.AddControllersWithViews()
-    .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<RegistroValidator>());
+// Configurando o FluentValidation e Removendo o atributo obrigatório para tipos de referência não anuláveis.
+builder.Services.AddControllersWithViews(options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true)
+    .AddFluentValidation(config =>
+    {
+        config.RegisterValidatorsFromAssemblyContaining<RegistroValidator>();
+    });
 
 // Adicionando injeção de dependência
 builder.Services.AddRepositories();
